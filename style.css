@@ -149,7 +149,7 @@ body {
 
   .envelope > .letter {
     width: 80%;
-    font-size: 13px; /* Slightly larger font for readability on mobile */
+    font-size: 7px; /* Slightly larger font for readability on mobile */
   }
 
   .envelope > .letter > .text {
