@@ -1,4 +1,4 @@
-:root{
+:root {
   --primary: #fff;
   --bg-color: rgb(5, 53, 61);
   --bg-envelope-color: #f5edd1;
@@ -8,7 +8,8 @@
   --txt-color: #444;
   --heart-color: rgb(252, 8, 231);
 }
-body{
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,21 +17,33 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh; /* Make sure the body takes full height */
+  overflow: hidden; /* Prevents scrolling */
 }
+
 .container {
-  height: 100vh;
+  height: 100%;
   display: grid;
   place-items: center;
+  width: 100%;
+  padding: 10px; /* Adds padding to ensure elements don't touch the edges */
 }
+
 .container > .envelope-wrapper {
   background: var(--bg-envelope-color);
   box-shadow: 0 0 40px var(--shadow-color);
+  padding: 10px;
+  border-radius: 10px; /* Optional: Adds rounded corners */
 }
+
 .envelope-wrapper > .envelope {
   position: relative;
-  width: 300px;
-  height: 230px;
+  width: 100%;
+  max-width: 300px; /* Makes the envelope size responsive */
+  height: auto;
+  aspect-ratio: 4 / 3; /* Maintains a 4:3 aspect ratio for responsiveness */
 }
+
 .envelope-wrapper > .envelope::before {
   content: "";
   position: absolute;
@@ -42,6 +55,7 @@ body{
   transform-origin: top;
   transition: all 0.5s ease-in-out 0.7s;
 }
+
 .envelope-wrapper > .envelope::after {
   content: "";
   position: absolute;
@@ -53,6 +67,7 @@ body{
   border-bottom: 100px solid var(--envelope-cover);
   border-left: 150px solid var(--envelope-cover);
 }
+
 .envelope > .letter {
   position: absolute;
   right: 20%;
@@ -64,14 +79,19 @@ body{
   transition: all 1s ease-in-out;
   box-shadow: 0 0 5px var(--shadow-color);
   padding: 20px 10px;
+  box-sizing: border-box;
+  font-size: 12px; /* Default font size */
 }
 
 .envelope > .letter > .text {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--txt-color);
   text-align: center;
-  font-size: 5px;
+  font-size: 1rem; /* Use rem units for better scaling */
+  line-height: 1.5; /* Improve text readability */
+  word-wrap: break-word; /* Prevent text from overflowing */
 }
+
 .heart {
   position: absolute;
   top: 50%;
@@ -86,6 +106,7 @@ body{
   cursor: pointer;
   border-radius: 100%;
 }
+
 .heart:before, 
 .heart:after {
   content: "";
@@ -95,22 +116,49 @@ body{
   background-color: var(--heart-color);
   border-radius: 50%;
 }
+
 .heart:before {
   top: -7.5px;
 }
+
 .heart:after {
   right: 7.5px;
 }
+
 .flap > .envelope:before {
   transform: rotateX(180deg);
   z-index: 0;
 }
+
 .flap > .envelope > .letter {
   bottom: 100px;
   transform: scale(1.5);
   transition-delay: 1s;
 }
+
 .flap > .heart {
   transform: rotate(90deg);
   transition-delay: 0.4s;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .envelope-wrapper > .envelope {
+    max-width: 250px; /* Smaller envelope for mobile screens */
+  }
+
+  .envelope > .letter {
+    width: 70%; /* Increase width for better letter visibility on smaller screens */
+    font-size: 14px; /* Slightly larger font for mobile */
+  }
+
+  .envelope > .letter > .text {
+    font-size: 1.2rem; /* Larger text on smaller screens */
+  }
+
+  .heart {
+    width: 20px;
+    height: 20px;
+    top: 55%;
+  }
 }
