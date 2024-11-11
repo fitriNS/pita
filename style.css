@@ -69,7 +69,7 @@ body{
 .envelope > .letter > .text {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--txt-color);
-  text-align: left;
+  text-align: center;
   font-size: 7px;
 }
 .heart {
@@ -84,6 +84,7 @@ body{
   transition: transform 0.5s ease-in-out 1s;
   box-shadow: 0 1px 6px var(--shadow-color);
   cursor: pointer;
+  border-radius: 60%;
 }
 .heart:before, 
 .heart:after {
