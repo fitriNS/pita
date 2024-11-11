@@ -80,7 +80,7 @@ body {
   box-shadow: 0 0 5px var(--shadow-color);
   padding: 20px 10px;
   box-sizing: border-box;
-  font-size: 12px; /* Reduced default font size */
+  font-size: 3 px; /* Reduced default font size */
 }
 
 .envelope > .letter > .text {
@@ -149,7 +149,7 @@ body {
 
   .envelope > .letter {
     width: 80%;
-    font-size: 3px; /* Slightly smaller font on mobile */
+    font-size: 0.7rem; /* Slightly smaller font on mobile */
   }
 
   .envelope > .letter > .text {
