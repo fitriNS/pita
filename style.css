@@ -70,7 +70,7 @@ body{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--txt-color);
   text-align: center;
-  font-size: 7px;
+  font-size: 6px;
 }
 .heart {
   position: absolute;
@@ -114,3 +114,48 @@ body{
   transform: rotate(90deg);
   transition-delay: 0.4s;
 }
+/* Media query untuk tampilan mobile */
+@media (max-width: 600px) {
+  .envelope-wrapper > .envelope {
+    width: 200px;
+    height: 150px;
+  }
+
+  .envelope-wrapper > .envelope::before,
+  .envelope-wrapper > .envelope::after {
+    border-top-width: 90px;
+    border-right-width: 100px;
+    border-left-width: 100px;
+    border-bottom-width: 70px;
+  }
+
+  .envelope > .letter {
+    right: 10%;
+    width: 80%;
+    height: 70%;
+    padding: 15px 8px;
+  }
+
+  .envelope > .letter > .text {
+    font-size: 5px;
+  }
+
+  .heart {
+    width: 12px;
+    height: 12px;
+    top: 45%;
+    left: 50%;
+  }
+  .heart:before, 
+  .heart:after {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Adjust the .container to make it fit mobile screens better */
+  .container {
+    height: auto;
+    padding: 20px;
+  }
+}
+
