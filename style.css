@@ -80,7 +80,7 @@ body {
   box-shadow: 0 0 5px var(--shadow-color);
   padding: 20px 10px;
   box-sizing: border-box;
-  font-size: 14px; /* Updated font size */
+  font-size: 7px; /* Updated font size */
 }
 
 .envelope > .letter > .text {
